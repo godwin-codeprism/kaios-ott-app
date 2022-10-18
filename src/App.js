@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useEffect, useRef, useState } from "react";
+// import { useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -16,8 +17,9 @@ const data = [
   },
 ];
 
-function App() {
+function App({showPlayer}) {
   const [activeIndex, _setActiveIndex] = useState(0);
+  // const navigate = useNavigate();
   const activeIndexRef = useRef(activeIndex);
   const setActiveIndex = (_activeIndex) => {
     activeIndexRef.current = _activeIndex;
@@ -46,6 +48,9 @@ function App() {
       case "ArrowLeft":
         nav(-1);
         break;
+      case "Enter":
+        openVideoScreen();
+        break;  
       default:
         break;
     }
@@ -60,6 +65,11 @@ function App() {
       targetElement.focus();
     }
   };
+
+  const openVideoScreen = () => {
+    // navigate('/video');
+    showPlayer();
+  }
 
   return (
     <div className="App">
@@ -85,7 +95,9 @@ function App() {
                           itemIndex === activeIndex ? "focused" : ""
                         }`}
                         style={{
-                          backgroundImage: `url(https://source.unsplash.com/random/320x180?sig=${itemIndex})`,
+                          // backgroundImage: `url(https://source.unsplash.com/random/320x180?sig=${itemIndex}&auto=format)`,
+                          backgroundImage: `url(https://picsum.photos/320/180?random=${itemIndex})`,
+                          // backgroundImage: `url(assets/img/photo.jpg)`,
                         }}
                         tabIndex={itemIndex}
                       ></li>
