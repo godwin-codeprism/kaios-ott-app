@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "name": "OTT React App for KaiOS",
+  "description": "OTT App for KaiOS Platfrom",
+  "type": "web",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/assets/icons/logo_56.png",
+    "112": "/assets/icons/logo_112.png"
+  },
+  "developer": {
+    "name": "Godwin Team",
+    "url": "https://godwinvc.com"
+  },
+  "locales": {
+    "en-US": {
+      "name": "OTT React App for KaiOS",
+      "subtitle": "OTT App for KaiOS Platfrom",
+      "description": "OTT App for KaiOS Platfrom"
+    }
+  },
+  "default_locale": "en-US"
+}
